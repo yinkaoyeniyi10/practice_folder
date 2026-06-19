@@ -1,10 +1,11 @@
-from flask import render_template, flash, redirect, url_for
+from flask import render_template, flash, redirect, url_for, request
 from flask_login import current_user, login_user, login_required, logout_user
 import sqlalchemy as sa
 from app import db
 from app.models import User
 from app import app
-from app.forms import LoginForm
+from app.forms import LoginForm, RegistrationForm
+from urllib.parse import urlsplit
 @app.route('/')
 @app.route('/index')
 @login_required
@@ -20,20 +21,41 @@ def index():
             'body': 'The Avengers movie was so cool!'
         }
     ]
-    return render_template('index.html', title='Home', user=user, posts=posts)
+    return render_template('index.html', title='Home', posts=posts)
 @app.route('/login', methods=['GET', 'POST'])
 def login():
+    # If statement checks if user is logged in
     if current_user.is_authenticated:
         return redirect(url_for('index'))
     form = LoginForm()
     if form.validate_on_submit():
         user = db.session.scalar(sa.select(User).where(User.username == form.username.data))
-        if user is None or not user.check_password(form.password.data):
+        if user is None or not user.check_password(form.password.data): #If user doesn't exist or password is wrong, enter wrong password message
             flash('Incorrect username or password!')
             return redirect(url_for('login'))
-        return redirect(url_for('index'))
+        login_user(user, remember=form.remember_me.data)
+        '''When the user tries to enter a page that requires login, they are taken to the login form
+        with the page they are trying to access saved as a "next_page" '''
+        next_page = request.args.get('next')
+        '''If there is no "next_page" OR the user is being redirected to another website somehow
+        simply take them to the home page'''
+        if not next_page or urlsplit(next_page).netloc != '':
+            return redirect(url_for('index'))
     return render_template('login.html', title='Sign In', form=form)
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('index'))
+@app.route('/register', methods=['GET', 'POST'])
+def register():
+    if current_user.is_authenticated:
+        return redirect(url_for('index'))
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        user = User(username=form.username.data, email=form.email.data)
+        user.set_password(form.password.data)
+        db.session.add(user)
+        db.session.commit()
+        flash('Congratulations! You are now a registered user!')
+        return redirect(url_for('login'))
+    return render_template('register.html', title='Register', form=form)
