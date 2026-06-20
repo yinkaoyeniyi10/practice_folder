@@ -40,7 +40,8 @@ def login():
         '''If there is no "next_page" OR the user is being redirected to another website somehow
         simply take them to the home page'''
         if not next_page or urlsplit(next_page).netloc != '':
-            return redirect(url_for('index'))
+            next_page = url_for('index')
+        return redirect(next_page)
     return render_template('login.html', title='Sign In', form=form)
 @app.route('/logout')
 def logout():
