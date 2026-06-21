@@ -6,6 +6,7 @@ from app import db
 from typing import Optional
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from hashlib import md5
 @login.user_loader
 def load_user(id):
     return db.session.get(User, int(id))
@@ -29,3 +30,6 @@ class Post(db.Model):
     author: so.Mapped[User] = so.relationship(back_populates='posts') 
     def __repr__(self):
         return '<Post {}>'.format(self.body)
+def avatar(self, size):
+    digest = md5(self.email.lower().encode('utf-8')).hexdigest()
+    return f'https://www.gravatar.com/avatar/{digest}?d=identicon&s={size}'
