@@ -36,6 +36,8 @@ def login():
     form = LoginForm()
     if form.validate_on_submit():
         user = db.session.scalar(sa.select(User).where(User.username == form.username.data))
+        print("Username entered:", form.username.data)
+        print("User found:", user)
         if user is None or not user.check_password(form.password.data): #If user doesn't exist or password is wrong, enter wrong password message
             flash('Incorrect username or password!')
             return redirect(url_for('login'))
@@ -75,7 +77,7 @@ def user(username):
         {'author': user, 'body': 'Test post #2'}
     ]
     form = EmptyForm()
-    return render_template('user.html', user=user, posts=posts)
+    return render_template('user.html', user=user, posts=posts, form=form)
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
 def edit_profile():
