@@ -74,6 +74,7 @@ def user(username):
         {'author': user, 'body': 'Test post #1'},
         {'author': user, 'body': 'Test post #2'}
     ]
+    form = EmptyForm()
     return render_template('user.html', user=user, posts=posts)
 @app.route('/edit_profile', methods=['GET', 'POST'])
 @login_required
@@ -92,4 +93,37 @@ def edit_profile():
 @app.route('/follow/<username>', methods=['POST'])
 @login_required
 def follow(username):
-    forms = EmptyForm()
+    form = EmptyForm()
+    if form.validate_on_submit():
+        user = db.session.scalar(sa.select(User).where(User.username == username))
+        if user is None:
+            flash(f'User {username} not found.')
+            return redirect(url_for('index'))
+        if user == current_user:
+            flash("You can't follow yourself..")
+            return redirect(url_for('user', username=username))
+        current_user.follow(user)
+        db.session.commit()
+        flash('You are following {username}!')
+        return redirect(url_for('user'), username=username)
+    else:
+        return redirect(url_for('index'))
+    return render_template('edit_profile.html', title='Edit Profile', form=form)
+@app.route('/unfollow/<username>', methods=['POST'])
+@login_required
+def unfollow(username):
+    form = EmptyForm()
+    if form.validate_on_submit():
+        user = db.session.scalar(sa.select(User).where(User.username == username))
+        if user is None:
+            flash(f'User {username} is not found')
+            return redirect(url_for('index'))
+        if user == current_user:
+            flash("You can't unfollow yourself!")
+            return redirect(url_for('index'))
+        current_user.unfollow(user)
+        db.session.commit()
+        flash(f'You are no longer following {username}.')
+        return redirect(url_for('user'), username=username)
+    else:
+        return redirect(url_for('index'))

@@ -1,4 +1,4 @@
-2026-06-25 15:44:17,559 ERROR: Exception on /login [POST] [in c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py:875]
+2026-06-25 15:39:44,318 ERROR: Exception on /login [POST] [in c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py:875]
 Traceback (most recent call last):
   File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
     self.dialect.do_execute(
@@ -109,12 +109,6 @@ sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
 [SQL: SELECT user.id, user.username, user.email, user.password_hash, user.about_me, user.last_seen 
 FROM user 
 WHERE user.username = ?]
-[parameters: ('bob',)]
+[parameters: ('susan',)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
-2026-06-25 15:47:01,176 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-25 15:47:12,304 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-25 15:47:18,410 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-25 15:49:11,309 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-25 15:50:28,014 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-25 15:50:37,295 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-25 15:53:43,597 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
+2026-06-25 15:44:08,823 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
