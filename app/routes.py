@@ -4,7 +4,7 @@ import sqlalchemy as sa
 from app import db
 from app.models import User
 from app import app
-from app.forms import LoginForm, RegistrationForm, EditProfileForm
+from app.forms import LoginForm, RegistrationForm, EditProfileForm, EmptyForm
 from urllib.parse import urlsplit
 from datetime import datetime, timezone
 @app.before_request
@@ -89,4 +89,7 @@ def edit_profile():
         form.username.data = current_user.username
         form.about_me.data = current_user.about_me
     return render_template('edit_profile.html', title='Edit Profile', form=form)
-    
+@app.route('/follow/<username>', methods=['POST'])
+@login_required
+def follow(username):
+    forms = EmptyForm()

@@ -36,3 +36,5 @@ class EditProfileForm(FlaskForm):
             user = db.session.scalar(sa.select(User).where(User.username == username.data))
             if user is not None:
                 raise ValidationError('That name is not available. Please use a different one.')
+class EmptyForm(FlaskForm):
+    submit = SubmitField('Submit')
