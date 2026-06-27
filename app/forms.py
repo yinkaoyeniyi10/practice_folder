@@ -38,3 +38,7 @@ class EditProfileForm(FlaskForm):
                 raise ValidationError('That name is not available. Please use a different one.')
 class EmptyForm(FlaskForm):
     submit = SubmitField('Submit')
+class PostForm(FlaskForm):
+    post = TextAreaField('Say something', validators=[
+        DataRequired(), Length(min=1, max=140)])
+    submit = SubmitField("Submit")
