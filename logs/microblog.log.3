@@ -1,20 +1,4 @@
-2026-06-24 17:06:27,680 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-24 17:06:28,500 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-24 17:07:24,738 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-24 17:07:41,569 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-24 17:07:42,366 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-24 17:08:38,973 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-24 17:09:09,226 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-25 14:16:21,560 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-25 14:16:35,543 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-25 15:14:13,693 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-25 15:15:04,921 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-25 15:15:48,489 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-25 15:17:58,272 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-25 15:38:59,191 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-25 15:39:00,159 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-25 15:39:28,214 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-25 15:39:34,409 ERROR: Exception on /login [POST] [in c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py:875]
+2026-06-25 15:39:44,318 ERROR: Exception on /login [POST] [in c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py:875]
 Traceback (most recent call last):
   File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
     self.dialect.do_execute(
@@ -125,5 +109,6 @@ sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
 [SQL: SELECT user.id, user.username, user.email, user.password_hash, user.about_me, user.last_seen 
 FROM user 
 WHERE user.username = ?]
-[parameters: ('bob',)]
+[parameters: ('susan',)]
 (Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-06-25 15:44:08,823 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
