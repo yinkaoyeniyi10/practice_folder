@@ -6,8 +6,10 @@ from flask_login import LoginManager
 import logging
 from logging.handlers import SMTPHandler, RotatingFileHandler
 from flask_mail import Mail
+from flask_moment import Moment
 import os
 app = Flask(__name__)
+moment = Moment(app)
 login = LoginManager(app)
 login.login_view = "login"
 app.config.from_object(Config)
