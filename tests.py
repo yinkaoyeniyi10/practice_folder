@@ -1,37 +1,30 @@
-#These tests have been added so that I can run these after each change to make sure 
-#everything still passes
 import os
 os.environ['DATABASE_URL'] = 'sqlite://'
 
 from datetime import datetime, timezone, timedelta
 import unittest
+import pytest
 from app import app, db
 from app.models import User, Post
 
-
-class UserModelCase(unittest.TestCase):
-    def setUp(self):
-        self.app_context = app.app_context()
-        self.app_context.push()
-        db.create_all()
-
-    def tearDown(self):
-        db.session.remove()
-        db.drop_all()
-        self.app_context.pop()
-
-    def test_password_hashing(self):
-        u = User(username='susan', email='susan@example.com')
-        u.set_password('cat')
-        self.assertFalse(u.check_password('dog'))
-        self.assertTrue(u.check_password('cat'))
-
-    def test_avatar(self):
-        u = User(username='john', email='john@example.com')
-        self.assertEqual(u.avatar(128), ('https://www.gravatar.com/avatar/'
+@pytest.fixture(scope="function", autouse=True)
+def test_db():
+    app_context = app.app_context()
+    app_context.push()
+    db.create_all()
+    yield
+    db.session.remove()
+    db.drop_all()
+    app_context.pop()
+def test_password_hashing(self):
+    u = User(username='susan', email='susan@example.com')
+    u.set_password('cat')
+    assert not u.check_password('dog')
+    assert u.check_password('cat')
+    u = User(username='john', email='john@example.com')
+    assert u.avatar(128), ('https://www.gravatar.com/avatar/'
                                          'd4c74594d841139328695756648b6bd6'
-                                         '?d=identicon&s=128'))
-
+                                         '?d=identicon&s=128')
     def test_follow(self):
         u1 = User(username='john', email='john@example.com')
         u2 = User(username='susan', email='susan@example.com')
@@ -40,25 +33,26 @@ class UserModelCase(unittest.TestCase):
         db.session.commit()
         following = db.session.scalars(u1.following.select()).all()
         followers = db.session.scalars(u2.followers.select()).all()
-        self.assertEqual(following, [])
-        self.assertEqual(followers, [])
+        assert following == []
+        assert followers == []
 
         u1.follow(u2)
         db.session.commit()
-        self.assertTrue(u1.is_following(u2))
-        self.assertEqual(u1.following_count(), 1)
-        self.assertEqual(u2.followers_count(), 1)
+        assert u1.is_following(u2)
+        assert u1.following_count(), 1
+        assert u2.followers_count(), 1
         u1_following = db.session.scalars(u1.following.select()).all()
         u2_followers = db.session.scalars(u2.followers.select()).all()
-        self.assertEqual(u1_following[0].username, 'susan')
-        self.assertEqual(u2_followers[0].username, 'john')
+        assert u1_following[0].username == 'susan'
+        assert u2_followers[0].username == 'john'
 
         u1.unfollow(u2)
         db.session.commit()
-        self.assertFalse(u1.is_following(u2))
-        self.assertEqual(u1.following_count(), 0)
-        self.assertEqual(u2.followers_count(), 0)
+        assert not u1.is_following(u2)
+        assert u1.following_count() == 0
+        assert u2.followers_count() == 0
 
+class UserModelCase(unittest.TestCase):
     def test_follow_posts(self):
         # create four users
         u1 = User(username='john', email='john@example.com')
@@ -92,11 +86,7 @@ class UserModelCase(unittest.TestCase):
         f2 = db.session.scalars(u2.following_posts()).all()
         f3 = db.session.scalars(u3.following_posts()).all()
         f4 = db.session.scalars(u4.following_posts()).all()
-        self.assertEqual(f1, [p2, p4, p1])
-        self.assertEqual(f2, [p2, p3])
-        self.assertEqual(f3, [p3, p4])
-        self.assertEqual(f4, [p4])
-
-
-if __name__ == '__main__':
-    unittest.main(verbosity=2)
+        assert f1 == [p2, p4, p1]
+        assert f2 == [p2, p3]
+        assert f3 == [p3, p4]
+        assert f4 == [p4]
