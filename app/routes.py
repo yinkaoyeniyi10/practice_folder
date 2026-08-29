@@ -113,7 +113,7 @@ def follow(username):
         current_user.follow(user)
         db.session.commit()
         flash('You are following {username}!')
-        return redirect(url_for('user'), username=username)
+        return redirect(url_for('user', username=username))
     else:
         return redirect(url_for('index'))
     return render_template('edit_profile.html', title='Edit Profile', form=form)

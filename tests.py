@@ -2,7 +2,6 @@ import os
 os.environ['DATABASE_URL'] = 'sqlite://'
 
 from datetime import datetime, timezone, timedelta
-import unittest
 import pytest
 from app import app, db
 from app.models import User, Post
@@ -51,8 +50,6 @@ def test_password_hashing(self):
         assert not u1.is_following(u2)
         assert u1.following_count() == 0
         assert u2.followers_count() == 0
-
-class UserModelCase(unittest.TestCase):
     def test_follow_posts(self):
         # create four users
         u1 = User(username='john', email='john@example.com')
