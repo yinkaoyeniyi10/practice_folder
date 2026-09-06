@@ -99,9 +99,9 @@ class User(UserMixin, db.Model):
             self.liked_posts.add(post)
     def unlike(self, post):
         if self.is_liking(post):
-            self.liked_post.remove(post)
+            self.liked_posts.remove(post)
     def is_liking(self, post):
-        query = self.liked_posts.selectt().where(Post.id == post.id)
+        query = self.liked_posts.select().where(Post.id == post.id)
         return db.session.scalar(query) is not None
 class Post(db.Model):
     id: so.Mapped[int] = so.mapped_column(primary_key=True)

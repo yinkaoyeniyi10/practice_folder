@@ -5,6 +5,20 @@
             <a href="{{ url_for('user', username=post.author.username) }}">
                 {{ post.author.username}}
             </a> says {{moment(post.timestamp).fromNow()}}:
-            <br>{{ post.body }}</td>
+            <br>{{ post.body }}
+            <br><br>
+            {% if current_user.is_liking(post) %}
+            <form action="{{url_for('unlike', post_id=post.id)}}" method="post">
+                {{form.hidden_tag()}}
+                <button type="submit">💜 Unlike</button>
+            </form>
+            {% else %}
+            <form action="{{url_for('like', post_id=post.id)}}" method="post">
+                {{form.hidden_tag()}}
+                <button type="submit">🖤 Like</button>
+            </form>
+            {% endif %}
+            Likes: {{post.likes_count()}}
+        </td>
     </tr>
 </table>

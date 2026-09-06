@@ -1,114 +1,120 @@
-2026-06-25 15:39:44,318 ERROR: Exception on /login [POST] [in c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py:875]
+2026-09-05 19:25:53,756 ERROR: Exception on / [GET] [in C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py:875]
 Traceback (most recent call last):
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
-    self.dialect.do_execute(
-    ~~~~~~~~~~~~~~~~~~~~~~~^
-        cursor, str_statement, effective_parameters, context
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
-    cursor.execute(statement, parameters)
-    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-sqlite3.OperationalError: no such table: user
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
     response = self.full_dispatch_request()
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
     rv = self.dispatch_request()
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "C:\Users\oyeko\Downloads\practice_folder\app\routes.py", line 38, in login
-    user = db.session.scalar(sa.select(User).where(User.username == form.username.data))
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 1826, in scalar
-    return self._proxied.scalar(
-           ~~~~~~~~~~~~~~~~~~~~^
-        statement,
-        ^^^^^^^^^^
-    ...<3 lines>...
-        **kw,
-        ^^^^^
-    )
-    ^
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2420, in scalar
-    return self._execute_internal(
-           ~~~~~~~~~~~~~~~~~~~~~~^
-        statement,
-        ^^^^^^^^^^
-    ...<4 lines>...
-        **kw,
-        ^^^^^
-    )
-    ^
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2270, in _execute_internal
-    result: Result[Any] = compile_state_cls.orm_execute_statement(
-                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        self,
-        ^^^^^
-    ...<4 lines>...
-        conn,
-        ^^^^^
-    )
-    ^
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
-    result = conn.execute(
-        statement, params or {}, execution_options=execution_options
-    )
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
-    return meth(
-        self,
-        distilled_parameters,
-        execution_options or NO_OPTIONS,
-    )
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
-    return connection._execute_clauseelement(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        self, distilled_params, execution_options
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
-    ret = self._execute_context(
-        dialect,
-    ...<8 lines>...
-        cache_hit=cache_hit,
-    )
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
-    return self._exec_single_context(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~^
-        dialect, context, statement, parameters
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
-    self._handle_dbapi_exception(
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        e, str_statement, effective_parameters, cursor, context
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
-    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
-    self.dialect.do_execute(
-    ~~~~~~~~~~~~~~~~~~~~~~~^
-        cursor, str_statement, effective_parameters, context
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
-    cursor.execute(statement, parameters)
-    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
-[SQL: SELECT user.id, user.username, user.email, user.password_hash, user.about_me, user.last_seen 
-FROM user 
-WHERE user.username = ?]
-[parameters: ('susan',)]
-(Background on this error at: https://sqlalche.me/e/20/e3q8)
-2026-06-25 15:44:08,823 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\oyeko\Downloads\practice_folder\app\routes.py", line 33, in index
+    return render_template('index.html', title='Home', form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\base.html", line 58, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\index.html", line 18, in block 'content'
+    {% include '_post.html' %}
+    ^^^^^^^^^^^^^^^^^
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\_post.html", line 10, in top-level template code
+    {% if current_user.is_liking(post) %}
+    ^^^^^^^^^^^^^
+  File "c:\Users\oyeko\Downloads\practice_folder\app\models.py", line 104, in is_liking
+    query = self.liked_posts.selectt().where(Post.id == post.id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'WriteOnlyCollection' object has no attribute 'selectt'. Did you mean: 'select'?
+2026-09-05 19:25:58,408 ERROR: Exception on /index [GET] [in C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\oyeko\Downloads\practice_folder\app\routes.py", line 33, in index
+    return render_template('index.html', title='Home', form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\base.html", line 58, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\index.html", line 18, in block 'content'
+    {% include '_post.html' %}
+    ^^^^^^^^^^^^^^^^^
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\_post.html", line 10, in top-level template code
+    {% if current_user.is_liking(post) %}
+    ^^^^^^^^^^^^^
+  File "c:\Users\oyeko\Downloads\practice_folder\app\models.py", line 104, in is_liking
+    query = self.liked_posts.selectt().where(Post.id == post.id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'WriteOnlyCollection' object has no attribute 'selectt'. Did you mean: 'select'?
+2026-09-05 19:25:59,341 ERROR: Exception on /index [GET] [in C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\oyeko\Downloads\practice_folder\app\routes.py", line 33, in index
+    return render_template('index.html', title='Home', form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\base.html", line 58, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\index.html", line 18, in block 'content'
+    {% include '_post.html' %}
+    ^^^^^^^^^^^^^^^^^
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\_post.html", line 10, in top-level template code
+    {% if current_user.is_liking(post) %}
+    ^^^^^^^^^^^^^
+  File "c:\Users\oyeko\Downloads\practice_folder\app\models.py", line 104, in is_liking
+    query = self.liked_posts.selectt().where(Post.id == post.id)
+            ^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'WriteOnlyCollection' object has no attribute 'selectt'. Did you mean: 'select'?

@@ -1,113 +1,69 @@
-2026-06-25 15:39:40,353 ERROR: Exception on /login [POST] [in c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py:875]
-Traceback (most recent call last):
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
-    self.dialect.do_execute(
-    ~~~~~~~~~~~~~~~~~~~~~~~^
-        cursor, str_statement, effective_parameters, context
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
-    cursor.execute(statement, parameters)
-    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-sqlite3.OperationalError: no such table: user
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
-    response = self.full_dispatch_request()
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
-  File "C:\Users\oyeko\Downloads\practice_folder\app\routes.py", line 38, in login
-    user = db.session.scalar(sa.select(User).where(User.username == form.username.data))
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\orm\scoping.py", line 1826, in scalar
-    return self._proxied.scalar(
-           ~~~~~~~~~~~~~~~~~~~~^
-        statement,
-        ^^^^^^^^^^
-    ...<3 lines>...
-        **kw,
-        ^^^^^
-    )
-    ^
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2420, in scalar
-    return self._execute_internal(
-           ~~~~~~~~~~~~~~~~~~~~~~^
-        statement,
-        ^^^^^^^^^^
-    ...<4 lines>...
-        **kw,
-        ^^^^^
-    )
-    ^
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\orm\session.py", line 2270, in _execute_internal
-    result: Result[Any] = compile_state_cls.orm_execute_statement(
-                          ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        self,
-        ^^^^^
-    ...<4 lines>...
-        conn,
-        ^^^^^
-    )
-    ^
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\orm\context.py", line 306, in orm_execute_statement
-    result = conn.execute(
-        statement, params or {}, execution_options=execution_options
-    )
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1421, in execute
-    return meth(
-        self,
-        distilled_parameters,
-        execution_options or NO_OPTIONS,
-    )
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\sql\elements.py", line 526, in _execute_on_connection
-    return connection._execute_clauseelement(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        self, distilled_params, execution_options
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1643, in _execute_clauseelement
-    ret = self._execute_context(
-        dialect,
-    ...<8 lines>...
-        cache_hit=cache_hit,
-    )
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1848, in _execute_context
-    return self._exec_single_context(
-           ~~~~~~~~~~~~~~~~~~~~~~~~~^
-        dialect, context, statement, parameters
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1988, in _exec_single_context
-    self._handle_dbapi_exception(
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
-        e, str_statement, effective_parameters, cursor, context
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 2365, in _handle_dbapi_exception
-    raise sqlalchemy_exception.with_traceback(exc_info[2]) from e
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1969, in _exec_single_context
-    self.dialect.do_execute(
-    ~~~~~~~~~~~~~~~~~~~~~~~^
-        cursor, str_statement, effective_parameters, context
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "c:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 952, in do_execute
-    cursor.execute(statement, parameters)
-    ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: user
-[SQL: SELECT user.id, user.username, user.email, user.password_hash, user.about_me, user.last_seen 
-FROM user 
-WHERE user.username = ?]
-[parameters: ('bob',)]
-(Background on this error at: https://sqlalche.me/e/20/e3q8)
+2026-06-28 16:28:25,322 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
+2026-06-28 16:28:26,340 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
+2026-06-28 16:33:57,908 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
+2026-06-28 16:35:33,719 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
+2026-06-28 16:35:34,781 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
+2026-06-28 16:38:15,356 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
+2026-06-29 18:06:44,246 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
+2026-06-29 18:07:15,151 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-01 18:00:25,389 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-01 20:20:03,129 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-04 14:26:50,172 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-04 14:49:48,120 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-04 14:49:49,657 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-04 14:56:40,187 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-04 14:56:41,527 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-04 14:58:02,385 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-04 14:58:03,335 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-04 14:59:07,281 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-04 14:59:08,330 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-04 15:05:14,546 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-04 15:07:59,634 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-04 15:10:06,622 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-04 15:10:07,597 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-04 15:19:39,221 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-04 15:19:47,818 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-04 15:19:48,945 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-04 15:25:39,632 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-05 17:36:24,832 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-05 17:36:25,571 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-05 17:46:45,606 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-05 17:46:46,519 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-05 17:49:04,923 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-05 17:49:05,703 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-05 18:17:03,084 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-05 18:17:03,833 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-06 14:43:45,707 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
+2026-07-06 16:03:26,779 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-07-06 16:03:27,725 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-07-06 16:04:41,038 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-07-06 16:04:42,453 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-17 20:15:17,506 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-17 20:15:19,062 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-18 17:26:00,235 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-18 17:26:02,025 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-18 17:59:54,686 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-18 17:59:56,738 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-19 00:01:31,411 INFO: Microblog startup [in /workspaces/practice_folder/app/__init__.py:41]
+2026-08-19 00:01:41,115 INFO: Microblog startup [in /workspaces/practice_folder/app/__init__.py:41]
+2026-08-19 00:01:41,718 INFO: Microblog startup [in /workspaces/practice_folder/app/__init__.py:41]
+2026-08-23 16:41:58,432 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-23 16:42:01,784 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-28 18:33:47,985 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-28 18:33:48,859 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-28 19:13:04,229 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-28 19:13:05,065 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-28 19:16:47,149 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-28 19:16:48,006 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-28 19:20:26,752 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-28 19:20:27,513 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-28 19:22:45,514 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-28 19:22:46,357 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-28 19:24:11,840 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-28 19:24:34,219 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-28 19:25:03,581 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-28 19:25:04,391 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-08-28 19:25:52,123 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-09-05 19:24:23,507 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-09-05 19:24:30,638 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-09-05 19:25:35,290 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]

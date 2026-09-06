@@ -1,66 +1,79 @@
-2026-06-28 16:28:25,322 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-28 16:28:26,340 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-28 16:33:57,908 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-28 16:35:33,719 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-28 16:35:34,781 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-28 16:38:15,356 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-29 18:06:44,246 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:37]
-2026-06-29 18:07:15,151 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-01 18:00:25,389 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-01 20:20:03,129 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-04 14:26:50,172 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-04 14:49:48,120 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-04 14:49:49,657 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-04 14:56:40,187 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-04 14:56:41,527 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-04 14:58:02,385 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-04 14:58:03,335 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-04 14:59:07,281 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-04 14:59:08,330 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-04 15:05:14,546 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-04 15:07:59,634 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-04 15:10:06,622 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-04 15:10:07,597 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-04 15:19:39,221 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-04 15:19:47,818 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-04 15:19:48,945 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-04 15:25:39,632 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-05 17:36:24,832 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-05 17:36:25,571 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-05 17:46:45,606 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-05 17:46:46,519 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-05 17:49:04,923 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-05 17:49:05,703 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-05 18:17:03,084 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-05 18:17:03,833 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-06 14:43:45,707 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:39]
-2026-07-06 16:03:26,779 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-07-06 16:03:27,725 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-07-06 16:04:41,038 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-07-06 16:04:42,453 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-17 20:15:17,506 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-17 20:15:19,062 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-18 17:26:00,235 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-18 17:26:02,025 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-18 17:59:54,686 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-18 17:59:56,738 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-19 00:01:31,411 INFO: Microblog startup [in /workspaces/practice_folder/app/__init__.py:41]
-2026-08-19 00:01:41,115 INFO: Microblog startup [in /workspaces/practice_folder/app/__init__.py:41]
-2026-08-19 00:01:41,718 INFO: Microblog startup [in /workspaces/practice_folder/app/__init__.py:41]
-2026-08-23 16:41:58,432 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-23 16:42:01,784 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-28 18:33:47,985 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-28 18:33:48,859 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-28 19:13:04,229 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-28 19:13:05,065 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-28 19:16:47,149 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-28 19:16:48,006 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-28 19:20:26,752 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-28 19:20:27,513 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-28 19:22:45,514 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-28 19:22:46,357 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-28 19:24:11,840 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-28 19:24:34,219 INFO: Microblog startup [in C:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-28 19:25:03,581 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-28 19:25:04,391 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
-2026-08-28 19:25:52,123 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
+2026-09-05 19:38:12,298 ERROR: Exception on / [GET] [in C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\oyeko\Downloads\practice_folder\app\routes.py", line 33, in index
+    return render_template('index.html', title='Home', form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\base.html", line 58, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\index.html", line 18, in block 'content'
+    {% include '_post.html' %}
+    ^^^^^^^^^^^^^^^^^
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\_post.html", line 17, in top-level template code
+    {{for.hidden_tag()}}
+    ^^^^^^^^^
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\jinja2\environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'for' is undefined
+2026-09-05 19:38:14,636 ERROR: Exception on /index [GET] [in C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py:875]
+Traceback (most recent call last):
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "c:\Users\oyeko\Downloads\practice_folder\app\routes.py", line 33, in index
+    return render_template('index.html', title='Home', form=form, posts=posts.items, next_url=next_url, prev_url=prev_url)
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\templating.py", line 151, in render_template
+    return _render(app, template, context)
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\flask\templating.py", line 132, in _render
+    rv = template.render(context)
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\jinja2\environment.py", line 1295, in render
+    self.environment.handle_exception()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\jinja2\environment.py", line 942, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\base.html", line 58, in top-level template code
+    {% block content %}{% endblock %}
+    ^^^^^^^^^^^^^^^^^^^
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\index.html", line 18, in block 'content'
+    {% include '_post.html' %}
+    ^^^^^^^^^^^^^^^^^
+  File "c:\Users\oyeko\Downloads\practice_folder\app\templates\_post.html", line 17, in top-level template code
+    {{for.hidden_tag()}}
+    ^^^^^^^^^
+  File "C:\Users\oyeko\Downloads\practice_folder\.venv\Lib\site-packages\jinja2\environment.py", line 490, in getattr
+    return getattr(obj, attribute)
+jinja2.exceptions.UndefinedError: 'for' is undefined
+2026-09-05 19:38:34,479 INFO: Microblog startup [in c:\Users\oyeko\Downloads\practice_folder\app\__init__.py:41]
