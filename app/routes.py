@@ -135,6 +135,20 @@ def unfollow(username):
         return redirect(url_for('user'), username=username)
     else:
         return redirect(url_for('index'))
+@app.route('/like/<int:post_id>', methods=['POST'])
+@login_required
+def like(post_id):
+    post = db.get_or_404(Post, post_id)
+    current_user.like(post)
+    db.session.commit()
+    return redirect(request.referrer or url_for('index'))
+@app.route('/unlike/<int:post_id>', methods=['POST'])
+@login_required
+def unlike(post_id):
+    post = db.get_or_404(Post, post_id)
+    current_user.unlike(post)
+    db.session.commit()
+    return redirect(request.referrer or url_for('index'))
 @app.route('/explore')
 @login_required
 def explore():

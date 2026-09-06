@@ -19,12 +19,18 @@ followers = sa.Table(
                      sa.Column('follower_id', sa.Integer, sa.ForeignKey('user.id'), primary_key=True),
                      sa.Column('followed_id', sa.Integer, sa.ForeignKey('user.id'), primary_key=True)
                      )
+likes = sa.Table(
+    'likes', db.metadata,
+    sa.Column('user_id', sa.Integer, sa.ForeignKey('user.id'), primary_key=True),
+    sa.Column('post_id', sa.Integer, sa.ForeignKey('post.id'), primary_key=True)
+)
 class User(UserMixin, db.Model):
     id: so.Mapped[int] = so.mapped_column(primary_key=True)
     username: so.Mapped[str] = so.mapped_column(sa.String(64), index=True, unique=True)
     email: so.Mapped[str] = so.mapped_column(sa.String(120), index=True, unique=True)
     password_hash: so.Mapped[Optional[str]] = so.mapped_column(sa.String(256))
     posts: so.WriteOnlyMapped['Post'] = so.relationship(back_populates='author')
+    liked_posts: so.WriteOnlyMapped['Post'] = so.relationship(secondary=likes, back_populates='liked_by')
     about_me: so.Mapped[Optional[str]] = so.mapped_column(sa.String(140))
     last_seen: so.Mapped[Optional[datetime]] = so.mapped_column(default=lambda: datetime.now(timezone.utc))
     def __repr__(self):
@@ -88,11 +94,25 @@ class User(UserMixin, db.Model):
                 .group_by(Post)
             .order_by(Post.timestamp.desc())
         )
+    def like(self, post):
+        if not self.is_liking(post):
+            self.liked_posts.add(post)
+    def unlike(self, post):
+        if self.is_liking(post):
+            self.liked_post.remove(post)
+    def is_liking(self, post):
+        query = self.liked_posts.selectt().where(Post.id == post.id)
+        return db.session.scalar(query) is not None
 class Post(db.Model):
     id: so.Mapped[int] = so.mapped_column(primary_key=True)
     body: so.Mapped[str] = so.mapped_column(sa.String(140))
     timestamp: so.Mapped[datetime] = so.mapped_column(index=True, default=lambda: datetime.now(timezone.utc))
     user_id: so.Mapped[int] = so.mapped_column(sa.ForeignKey(User.id), index=True)
-    author: so.Mapped[User] = so.relationship(back_populates='posts') 
+    author: so.Mapped[User] = so.relationship(back_populates='posts')
+    liked_by: so.WriteOnlyMapped['User'] = so.relationship(secondary=likes, back_populates='liked_posts')
+    def likes_count(self):
+        query = sa.select(sa.func.count()).select_from(self.liked_by.select().subquery())
+        return db.session.scalar(query)
     def __repr__(self):
         return '<Post {}>'.format(self.body)
+    
